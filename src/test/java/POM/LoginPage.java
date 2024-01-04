@@ -3,6 +3,7 @@ package POM;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class LoginPage {
 
@@ -51,17 +52,24 @@ public class LoginPage {
         String url = driver.getCurrentUrl();
         return url;
     }
-    public boolean CheckLogin(){
-        String login = GetWelcomeText();
-        String actualUrl = getCurrentUrl();
-        if (login != null){
-            System.out.println("LOGIN SUCCESS");
-            System.out.println(login);
-            System.out.println(actualUrl);
-            return true;
-        }else {
-            System.out.println("LOGIN FAIL");
-            return false;
-        }
+
+//    public void verifyUrl(String actualUrl){
+//        String expectedUrl = "https://live.techpanda.org/index.php/customer/account/";
+//        Assert.assertEquals(expectedUrl, actualUrl);
+//    }
+public boolean CheckLogin() {
+    String login = GetWelcomeText();
+    String actualUrl = getCurrentUrl();
+
+    if (login != null && actualUrl.equals("https://live.techpanda.org/index.php/customer/account/")) {
+        System.out.println("LOGIN SUCCESS");
+        System.out.println(login);
+        System.out.println(actualUrl);
+        return true;
+    } else {
+        System.out.println("LOGIN FAIL");
+        return false;
     }
+}
+
 }
