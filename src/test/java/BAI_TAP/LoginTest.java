@@ -1,6 +1,5 @@
 package BAI_TAP;
 
-import POM.CartPage;
 import POM.LoginPage;
 import driver.driverFactory;
 import org.apache.commons.io.FileUtils;
@@ -24,7 +23,7 @@ public class LoginTest {
         // init web driver session
         WebDriver driver = driverFactory.getChromeDriver();
         try{
-            CartPage cartPage = new CartPage(driver);
+            
             //Go to http://live.techpanda.org/
             driver.get("http://live.techpanda.org/");
 
