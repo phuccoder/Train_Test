@@ -47,11 +47,17 @@ public class LoginPage {
         return successLogin.getText();
     }
 
+    public String getCurrentUrl(){
+        String url = driver.getCurrentUrl();
+        return url;
+    }
     public boolean CheckLogin(){
         String login = GetWelcomeText();
+        String actualUrl = getCurrentUrl();
         if (login != null){
             System.out.println("LOGIN SUCCESS");
             System.out.println(login);
+            System.out.println(actualUrl);
             return true;
         }else {
             System.out.println("LOGIN FAIL");
