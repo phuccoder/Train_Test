@@ -67,6 +67,7 @@ public class LoginTest {
             //timing
             Thread.sleep(6000);
             loginPage.GetWelcomeText();
+            loginPage.getCurrentUrl();
             Thread.sleep(2000);
             loginPage.CheckLogin();
 
